@@ -95,11 +95,11 @@ export class InprogressComponent implements OnInit, OnDestroy {
   }
 
   private processStage(order: Order): void {
+    if (this.timerSubscription) {
+      this.timerSubscription.unsubscribe();
+    }
     this.timerSubscription = timer(order.processRunTime * 1000).subscribe(() => {
       this.initiateNextStage(order);
-      if (this.timerSubscription) {
-        this.timerSubscription.unsubscribe();
-      }
     });
   }
 

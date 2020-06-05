@@ -181,13 +181,13 @@
           "isNonVeg": false
         }
       ],
-      "status": "WAITING",
+      "status": "READY",
       "orderTime": "2020-06-04T11:10:11.249Z",
       "price": 12,
       "id": 1004,
-      "makingTime": 6,
+      "makingTime": 10,
       "waitingTime": 0,
-      "timeToCompleteLabel": "0 mins 6 sec",
+      "timeToCompleteLabel": "0 mins 10 sec",
       "processRunTime": 1
     },
     {
@@ -231,13 +231,13 @@
           "isNonVeg": false
         }
       ],
-      "status": "WAITING",
+      "status": "READY",
       "orderTime": "2020-06-04T11:10:33.475Z",
       "price": 16,
       "id": 1005,
-      "makingTime": 6,
+      "makingTime": 10,
       "waitingTime": 0,
-      "timeToCompleteLabel": "0 mins 6 sec",
+      "timeToCompleteLabel": "0 mins 10 sec",
       "processRunTime": 1
     },
     {
@@ -275,13 +275,13 @@
           "isNonVeg": false
         }
       ],
-      "status": "WAITING",
+      "status": "READY",
       "orderTime": "2020-06-04T11:20:19.144Z",
       "price": 13,
       "id": 1006,
-      "makingTime": 5,
+      "makingTime": 9,
       "waitingTime": 0,
-      "timeToCompleteLabel": "0 mins 5 sec",
+      "timeToCompleteLabel": "0 mins 9 sec",
       "processRunTime": 1
     }
   ]
