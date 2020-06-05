@@ -1,0 +1,13 @@
+<mat-card class="report-card">
+    <mat-card-header>
+      <div mat-card-avatar>
+          <img [src]="iconUrl" >
+      </div>
+      <mat-card-title>{{heading}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+      <p class="value">
+        {{value}}
+      </p>
+    </mat-card-content>
+  </mat-card>

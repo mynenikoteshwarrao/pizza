@@ -1,0 +1,110 @@
+<form orderForm *ngIf="orderForm" [formGroup]="orderForm" fxLayout="column" fxLayoutAlign="start stretch">
+    <mat-card>
+        <mat-card-title>Order Pizza </mat-card-title>
+        <mat-card-content>
+            <div fxLayout fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="20px" fxLayoutGap.xs="0">
+                <span>
+                    <mat-form-field>
+                        <mat-label>First Name </mat-label>
+                        <input matInput formControlName="firstName" />
+                    </mat-form-field>
+                </span>
+
+                <span>
+                    <mat-form-field>
+                        <mat-label>Last Name </mat-label>
+                        <input matInput formControlName="lastName" required />
+                    </mat-form-field>
+                </span>
+            </div>
+            <div fxLayout fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="20px" fxLayoutGap.xs="0">
+                <span>
+                    <mat-form-field>
+                        <mat-label>Email </mat-label>
+                        <input type="email" matInput formControlName="email" required />
+                    </mat-form-field>
+                </span>
+
+                <span>
+                    <mat-form-field>
+                        <mat-label>Phone </mat-label>
+                        <input matInput formControlName="phone" pattern="[0-9]+" required />
+                    </mat-form-field>
+                </span>
+            </div>
+
+            <div fxLayout fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="20px" fxLayoutGap.xs="0">
+                <span>
+                    <mat-form-field>
+                        <mat-label>Crust </mat-label>
+                        <mat-select
+                            formControlName="crust"
+                            disableOptionCentering
+                            (selectionChange)="optionsSelected()"
+                        >
+                            <mat-option *ngFor="let crust of crusts" [value]="crust">
+                                {{ crust.name }} ( ${{crust.price}} )
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </span>
+                <span>
+                    <mat-form-field>
+                        <mat-label>Sauce </mat-label>
+                        <mat-select
+                            formControlName="sauce"
+                            disableOptionCentering
+                            (selectionChange)="optionsSelected()"
+                        >
+                            <mat-option *ngFor="let sauce of sauces" [value]="sauce">
+                                {{ sauce.name }} ( ${{sauce.price}} )
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </span>
+            </div>
+
+            <div fxLayout fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="20px">
+                <span>
+                    <mat-form-field>
+                        <mat-label>Toppings </mat-label>
+                        <mat-select
+                            multiple
+                            formControlName="toppings"
+                            disableOptionCentering
+                            (selectionChange)="optionsSelected()"
+                        >
+                            <mat-option *ngFor="let topping of toppings" [value]="topping">
+                                {{ topping.name }} ( ${{topping.price}} )
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </span>
+                <span>
+                    <div>Minimun 3 toppings and first 3 high priced toppings are charged</div>
+                    <div><mat-chip-list>
+                        <mat-chip *ngFor="let topping of orderForm.controls.toppings.value">
+                            {{topping.name}} : ${{topping.price}}
+                        </mat-chip>
+                      </mat-chip-list></div>
+                </span>
+            </div>
+            <div class="price" fxLayout="column" fxLayoutAlign="left stretch" >
+                <div class="details">
+                    <div>Pizza Price : ${{ order.price }}</div>
+                </div>
+                <div>
+                    <img *ngIf="order?.isNonVeg" src="../../../assets/images/nonveg.png">
+                    <img *ngIf="!order?.isNonVeg" src="../../../assets/images/veg.png">
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="right" fxLayoutGap="30px">
+            <button mat-stroked-button color="accent" (click)="reset()">Reset</button>
+            <button mat-flat-button color="primary" (click)="save()" [disabled]="!orderForm.valid" type="submit"
+                >Order</button
+            >
+        </mat-card-actions>
+    </mat-card>
+    
+</form>

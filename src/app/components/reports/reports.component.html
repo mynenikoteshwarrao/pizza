@@ -1,0 +1,20 @@
+<div fxLayout="column" fxLayoutAlign="space-between start" >
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around stretch" >
+        <app-report-card   [value]="orderPlaced" 
+        [iconUrl]="'./../../../assets/images/orderplaced.png'" 
+        [heading]="'Orders Placed'"></app-report-card>
+        <app-report-card  [value]="inprogress" 
+        [iconUrl]="'./../../../assets/images/inprogress.png'"
+         [heading]="'Orders in Progress'"></app-report-card>
+        <app-report-card   [value]="completed"
+         [iconUrl]="'./../../../assets/images/completed.png'"
+         [heading]="'Orders Completed'"></app-report-card>
+    </div>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around stretch">
+        <app-report-card [value]="vegCompleted"
+         [iconUrl]="'./../../../assets/images/veg.png'" [heading]="'Vegetarian Pizza Completed'"></app-report-card>
+        <app-report-card [value]="nonVegCompleted" 
+        [iconUrl]="'./../../../assets/images/nonveg.png'" [heading]="'Non Vegetarian Pizza Completed'"></app-report-card>
+        <app-report-card [value]="ready" [iconUrl]="'./../../../assets/images/logo.png'" [heading]="'Pizza Ready'"></app-report-card>
+    </div>
+</div>
