@@ -1,7 +1,7 @@
 export enum StageTime {
   WAITING = 0,
-  TOPPINGTIME = 1,
-  INOVEN = 1,
-  QUALITYCHECK = 1,
+  TOPPINGTIME = 5,
+  INOVEN = 140,
+  QUALITYCHECK = 20,
   READY = 0,
 }
